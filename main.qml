@@ -1,5 +1,6 @@
 import QtQuick 2.6
 import "CommonData.js" as Data
+import QmlBanner 1.0
 
 Item {
     id: root
@@ -21,6 +22,15 @@ Item {
             id_leftLocation.append({"name": Data.list_location[i], "index": i})
             id_rightLocation.append({"name": Data.list_location[i+1], "index": i+1})
         }
+
+        // Load Banner
+        id_banner.loadBanner()
+    }
+
+    QmlBanner {
+        id: id_banner
+        unitId: "ca-app-pub-3940256099942544/6300978111"
+        bannerSize: QmlBanner.BANNER
     }
 
     // Global Timer to update weather and Date
