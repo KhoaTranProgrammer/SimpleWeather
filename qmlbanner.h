@@ -3,7 +3,9 @@
 
 #include <QObject>
 
+#ifdef Q_OS_ANDROID
 class QAndroidJniObject;
+#endif
 
 class QmlBanner : public QObject
 {
@@ -47,7 +49,9 @@ signals:
     void bannerLoaded();
 
 private:
+#ifdef Q_OS_ANDROID
     QAndroidJniObject* m_Activity;
+#endif
 };
 
 #endif // QMLBANNER_H
